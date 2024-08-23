@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta name="description" content=""> -->
+    <!-- <meta name="keywords" content=""> -->
+    <!-- <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"> -->
     <link rel="stylesheet" href="css/main.css" />
     <script defer src="js/main.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,32 +21,252 @@
     <!-- Content -->
     <div class="content">
       <div class="background-layer"></div>
-      
       <!-- logo -->
       <div class="logo">
-        
+        <img
+          src="/public/images/total-lawyers-logo.png"
+          alt="Total Lawyers Logo"
+        />
       </div>
 
       <div class="main-card">
         <div class="info-card">
-          
+          <div>
+            <h1 class="">
+              Get a 100% Free Consult for Up to $3,822/Month in Disability
+              Benefits
+            </h1>
+            <p>Answer a few questions to get started</p>
+          </div>
+
+          <div class="hidden">
+            <p>
+              Join over 1M+ others who chose us to connect with a lawyer — for
+              free.
+            </p>
+            <div>
+              <img
+                src="/public/images/logos-frame.png"
+                alt="logos"
+                class="logos-group"
+              />
+            </div>
+          </div>
         </div>
 
         <div class="form-card">
           <form action="">
-            
+            <div class="form-fieldsets step-one" id="step-one">
+              <fieldset>
+                <label for="one">How old are you?</label>
+                <input
+                  type="text"
+                  id="one"
+                  name="one"
+                  placeholder="Select an answer"
+                />
+              </fieldset>
+              <fieldset>
+                <label for="two">
+                  Do you expect to be out of work for at least a year due to
+                  your health?
+                </label>
+                <div class="grouping radio-grouping">
+                  <div>
+                    <input type="radio" id="yes" name="two" value="yes" />
+                    <label for="yes">Yes</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="no" name="two" value="no" />
+                    <label for="no">No</label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
 
+            <div class="form-fieldsets step-two" id="step-two">
+              <fieldset>
+                <label for="three">
+                  Have you been treated by a doctor, hospital, or clinic in the
+                  last year?
+                </label>
+                <div class="grouping radio-grouping">
+                  <div>
+                    <input type="radio" id="yes" name="three" value="yes" />
+                    <label for="yes">Yes</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="no" name="three" value="no" />
+                    <label for="no">No</label>
+                  </div>
+                </div>
+              </fieldset>
 
+              <fieldset>
+                <label for="four">
+                  Have you had a full time job within the past 5 years?
+                </label>
+                <div class="grouping radio-grouping">
+                  <div>
+                    <input type="radio" id="yes" name="four" value="yes" />
+                    <label for="yes">Yes</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="no" name="four" value="no" />
+                    <label for="no">No</label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
 
-            
+            <div class="form-fieldsets step-three" id="step-three">
+              <fieldset>
+                <label for="five">
+                  Do you already receive Social Security benefits?
+                </label>
+                <div class="grouping radio-grouping">
+                  <div>
+                    <input type="radio" id="yes" name="five" value="yes" />
+                    <label for="yes">Yes</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="no" name="five" value="no" />
+                    <label for="no">No</label>
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <label for="six">
+                  Have you hired an advocate or attorney to help get benefits?
+                </label>
+                <div class="grouping radio-grouping">
+                  <div>
+                    <input type="radio" id="yes" name="six" value="yes" />
+                    <label for="yes">Yes</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="no" name="six" value="no" />
+                    <label for="no">No</label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="form-fieldsets step-four" id="step-four">
+              <fieldset>
+                <label for="seven">What's your zip code?</label>
+                <input type="text" id="seven" name="seven" placeholder="" />
+              </fieldset>
+              <fieldset>
+                <label for="eight">
+                  Please briefly list the health conditions that prevent you
+                  from working.
+                </label>
+                <textarea name="eight" id="eight" rows="8"></textarea>
+              </fieldset>
+            </div>
+
+            <div class="form-fieldsets confirmation" id="confirmation">
+              <h6 class="confirm-header">
+                We found 1 SSDI lawyer in your area!
+              </h6>
+
+              <fieldset>
+                <label for="name">What's your full name?</label>
+                <div class="grouping">
+                  <div>
+                    <input
+                      type="text"
+                      id="firstname"
+                      name="firstname"
+                      placeholder="First Name"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="text"
+                      id="lastname"
+                      name="lastname"
+                      placeholder="Last Name"
+                    />
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset>
+                <label for="phoneNumber">What's your telephone number?</label>
+                <input
+                  type="text"
+                  id="phoneNumber"
+                  name="phoneNumber"
+                  placeholder=""
+                />
+              </fieldset>
+              <fieldset>
+                <label for="email">What's your email address?</label>
+                <input type="text" id="email" name="email" placeholder="" />
+              </fieldset>
+            </div>
+
+            <button type="submit" class="primary-button">Next Step</button>
+
+            <div>
+              <p>
+                Join over 1M+ others who chose us to connect with a lawyer — for
+                free.
+              </p>
+              <div>
+                <img
+                  src="/public/images/logos-frame.svg"
+                  alt="logos"
+                  class="logos-group"
+                />
+              </div>
+            </div>
+
+            <div>
+              <p class="submit-info hidden">
+                You should not send any sensitive or confidential information
+                through this site. Any information sent through this site does
+                not create an attorney-client relationship and may not be
+                treated as privileged or confidential. The lawyer or law firm
+                you are contacting is not required to, and may choose not to,
+                accept you as a client. The Internet is not necessarily secure
+                and emails sent through this site could be intercepted or read
+                by third parties.
+              </p>
+
+              <p class="submit-info">
+                By submitting this form I agree to the <a>Terms of Use</a> and
+                <a>Privacy Policy</a> and consent to be contacted by
+                Martindale-Nolo and its affiliates, and up to three attorneys
+                regarding this request and to receiving relevant marketing
+                messages by automated means, text and/or prerecorded messages at
+                the number provided. Consent is not required as a condition of
+                service, <a>Click Here</a> to agree without providing consent to
+                be contacted by automated means, text and/or prerecorded
+                messages. Rates may apply.
+              </p>
+            </div>
           </form>
         </div>
       </div>
     </div>
 
     <!-- Footer -->
-    <footer class="footer">
-      
-    </footer>
+    <div class="footer">
+      <img
+        src="/public/images/footer-img.png"
+        alt="footer"
+        class="footer-img hidden"
+        width="100%"
+      />
+      <img
+        src="/public/images/sm-footer-img.png"
+        alt="footer"
+        class="footer-img"
+        width="100%"
+      />
+    </div>
   </body>
 </html>
