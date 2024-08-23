@@ -1,0 +1,45 @@
+@import "mixins";
+
+body {
+  min-height: 100vh;
+  font-family: "Public Sans";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  background-image: url("/public/images/background-image.png");
+  background-size: cover;
+  background-position: center;
+  background-color: $bgMainColor;
+}
+
+/* Apply a global box-sizing reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Normalize padding and margin for common elements */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+/* Additional paragraph styling (optional) */
+p {
+  line-height: 1.5; /* Set a consistent line-height */
+}
+
+.btn {
+  @include button-light;
+}
