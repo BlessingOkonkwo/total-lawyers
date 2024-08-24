@@ -88,7 +88,6 @@ body {
       }
 
       .bottom-logos-container {
-
         @media only screen and (min-width: 768px) {
           display: none;
         }
@@ -127,17 +126,16 @@ body {
         }
 
         .info-card-header::after {
-          content: "";
-          position: absolute;
-          bottom: -12px;
-          left: 0;
-          width: 68px;
-          height: 4px;
-          border-radius: 3px;
-          background-color: $lineColor;
-          z-index: 50;
-
           @media only screen and (min-width: 768px) {
+            content: "";
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 68px;
+            height: 4px;
+            border-radius: 3px;
+            background-color: $lineColor;
+            z-index: 50;
           }
         }
       }

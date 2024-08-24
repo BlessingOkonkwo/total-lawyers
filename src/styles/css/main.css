@@ -583,16 +583,18 @@ body .content .main-card .info-card > div:first-child > *:not(:last-child) {
 body .content .main-card .info-card .info-card-header {
   position: relative;
 }
-body .content .main-card .info-card .info-card-header::after {
-  content: "";
-  position: absolute;
-  bottom: -12px;
-  left: 0;
-  width: 68px;
-  height: 4px;
-  border-radius: 3px;
-  background-color: #2376ff;
-  z-index: 50;
+@media only screen and (min-width: 768px) {
+  body .content .main-card .info-card .info-card-header::after {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    width: 68px;
+    height: 4px;
+    border-radius: 3px;
+    background-color: #2376ff;
+    z-index: 50;
+  }
 }
 body .content .main-card .form-card {
   background-color: #ffffff;
