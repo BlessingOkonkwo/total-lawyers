@@ -47,6 +47,7 @@ To set up the project locally:
   - The "Next" button will be disabled if any fields are left empty.
 - **Viewing Console Logs**:
   - Open your browser's developer tools to view the form values logged as you progress through the steps.
+  - Ensure that your developer console settings are configured to preserve the log. This allows you to view the logs even after navigating to the confirmation page.
 - **Confirmation Page**:
   - Upon completing the final step, a confirmation page will display all the information you've provided.
 
