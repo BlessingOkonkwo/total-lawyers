@@ -26,7 +26,6 @@ body {
     flex-basis: 0;
 
     @media only screen and (min-width: 768px) {
-      //   padding: 9.25rem 17.188rem;
       padding: 0 0 2.5rem 0;
     }
 
@@ -89,7 +88,6 @@ body {
       }
 
       .bottom-logos-container {
-        // display: block;
 
         @media only screen and (min-width: 768px) {
           display: none;
@@ -104,19 +102,42 @@ body {
         border-bottom-left-radius: 5px;
 
         @media only screen and (min-width: 768px) {
-          padding: 40px 24px 2.5rem 24px;
+          padding: 40px 24px 40px 24px;
           background-color: $bgVariantColor;
           width: 42.82%;
           @include space-y(40px);
         }
 
         > div {
-          @include space-y(8px);
+          @include space-y(10px);
         }
 
         > div {
           &:first-child {
             @include space-y(16px);
+
+            @media only screen and (min-width: 768px) {
+              @include space-y(28px);
+            }
+          }
+        }
+
+        .info-card-header {
+          position: relative;
+        }
+
+        .info-card-header::after {
+          content: "";
+          position: absolute;
+          bottom: -12px;
+          left: 0;
+          width: 68px;
+          height: 4px;
+          border-radius: 3px;
+          background-color: $lineColor;
+          z-index: 50;
+
+          @media only screen and (min-width: 768px) {
           }
         }
       }
@@ -129,7 +150,7 @@ body {
         border-bottom-right-radius: 5px;
 
         @media only screen and (min-width: 768px) {
-          padding: 40px 40px 7.5rem 40px;
+          padding: 40px 40px 120px 40px;
           width: 57.18%;
         }
 
@@ -138,8 +159,7 @@ body {
           @include space-y(40px);
 
           .form-step {
-            @include space-y(32px);
-            // display: none;
+            @include space-y(24px);
             visibility: hidden;
             margin-bottom: 0;
             height: 0;
@@ -149,19 +169,7 @@ body {
               transform 0.6s cubic-bezier(0.39, 0.575, 0.565, 1);
           }
 
-          // @keyframes fadeIn {
-          //   0% {
-          //     opacity: 0;
-          //     transform: translateY(10%);
-          //   }
-          //   100% {
-          //     opacity: 1;
-          //     transform: translateY(0%);
-          //   }
-          // }
-
           .form-step.active {
-            // display: block;
             visibility: visible;
             height: auto;
             opacity: 1;
@@ -170,10 +178,10 @@ body {
           }
 
           .form-bottom {
-            @include space-y(24px);
+            @include space-t(24px);
 
             @media only screen and (min-width: 768px) {
-              @include space-y(32px);
+              @include space-t(32px);
             }
           }
         }
@@ -233,6 +241,10 @@ body {
     color: $textColor;
   }
 
+  .radio-grouping > label {
+    padding: 12px 24px;
+  }
+
   .custom-select {
     position: relative;
     display: inline-block;
@@ -267,6 +279,18 @@ body {
   label {
     font-weight: 600;
     font-family: "Public Sans";
+    line-height: 21.5px;
+
+    @media only screen and (min-width: 768px) {
+      line-height: 27px;
+    }
+  }
+
+  label.radio-wrapper,
+  select,
+  input[type="text"] {
+    line-height: normal;
+    height: 45px;
   }
 
   fieldset {
@@ -282,6 +306,7 @@ body {
     font-size: 20px;
     width: $fullWidth;
     padding: 10px;
+    height: 48px;
     border-radius: 5px;
     text-align: center;
 

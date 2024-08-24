@@ -70,3 +70,8 @@
     margin-bottom: $space;
   }
 }
+@mixin space-t($space) {
+  > *:not(:first-child) {
+    margin-top: $space;
+  }
+}

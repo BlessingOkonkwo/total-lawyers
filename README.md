@@ -2,7 +2,7 @@
 
 ## Description
 
-This project is a multi-step form that lets users schedule a free legal consult by guiding them through a series of questions, ensuring that all fields are completed before progressing to the next step. The form is designed to be responsive, offering an optimal user experience on both mobile (max 767px) and desktop (min 768px) screens. As users navigate through the form, their input is logged to the console, providing a clear record of their progress. Upon completing the final step, users are directed to a confirmation page that displays all the information they provided.
+This project is a multi-step form that lets users schedule a free consult by guiding them through a series of questions, ensuring that all fields are completed before progressing to the next step. The form is designed to be responsive, offering an optimal user experience on both mobile (max 767px) and desktop (min 768px) screens. As users navigate through the form, their input is logged to the console, providing a clear record of their progress. Upon completing the final step, users are directed to a confirmation page that displays all the information they provided.
 
 ## Technologies Used
 

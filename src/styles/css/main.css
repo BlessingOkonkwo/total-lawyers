@@ -15,7 +15,62 @@ html {
 }
 
 .radio-wrapper {
+  display: flex;
+  align-items: center;
   cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.radio-wrapper:has(input[type=radio]:checked) {
+  border: solid 1px #006FBB;
+}
+
+.radio-wrapper input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.radio-wrapper span {
+  position: relative;
+  padding-left: 30px;
+}
+
+.radio-wrapper span::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border: 1px solid #333333;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+.radio-wrapper input[type=radio]:checked + span::before {
+  background-color: #2376ff;
+  border-color: #2376ff;
+}
+
+.radio-wrapper span::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%) scale(0);
+  width: 6px;
+  height: 6px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.radio-wrapper input[type=radio]:checked + span::after {
+  transform: translateY(-50%) scale(1);
 }
 
 body .go-back {
@@ -127,6 +182,10 @@ h1 {
   font-size: 28px;
   font-weight: 700;
   line-height: 30px;
+}
+
+p {
+  line-height: 21.5px;
 }
 
 hr {
@@ -502,7 +561,7 @@ body .content .main-card .info-card {
 }
 @media only screen and (min-width: 768px) {
   body .content .main-card .info-card {
-    padding: 40px 24px 2.5rem 24px;
+    padding: 40px 24px 40px 24px;
     background-color: #f8f8f8;
     width: 42.82%;
   }
@@ -511,10 +570,29 @@ body .content .main-card .info-card {
   }
 }
 body .content .main-card .info-card > div > *:not(:last-child) {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 body .content .main-card .info-card > div:first-child > *:not(:last-child) {
   margin-bottom: 16px;
+}
+@media only screen and (min-width: 768px) {
+  body .content .main-card .info-card > div:first-child > *:not(:last-child) {
+    margin-bottom: 28px;
+  }
+}
+body .content .main-card .info-card .info-card-header {
+  position: relative;
+}
+body .content .main-card .info-card .info-card-header::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  width: 68px;
+  height: 4px;
+  border-radius: 3px;
+  background-color: #2376ff;
+  z-index: 50;
 }
 body .content .main-card .form-card {
   background-color: #ffffff;
@@ -525,7 +603,7 @@ body .content .main-card .form-card {
 }
 @media only screen and (min-width: 768px) {
   body .content .main-card .form-card {
-    padding: 40px 40px 7.5rem 40px;
+    padding: 40px 40px 120px 40px;
     width: 57.18%;
   }
 }
@@ -544,7 +622,7 @@ body .content .main-card .form-card form .form-step {
   transition: opacity 0.6s cubic-bezier(0.39, 0.575, 0.565, 1), transform 0.6s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 body .content .main-card .form-card form .form-step > *:not(:last-child) {
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 body .content .main-card .form-card form .form-step.active {
   visibility: visible;
@@ -553,12 +631,12 @@ body .content .main-card .form-card form .form-step.active {
   transform: translateY(0%);
   margin-bottom: 40px;
 }
-body .content .main-card .form-card form .form-bottom > *:not(:last-child) {
-  margin-bottom: 24px;
+body .content .main-card .form-card form .form-bottom > *:not(:first-child) {
+  margin-top: 24px;
 }
 @media only screen and (min-width: 768px) {
-  body .content .main-card .form-card form .form-bottom > *:not(:last-child) {
-    margin-bottom: 32px;
+  body .content .main-card .form-card form .form-bottom > *:not(:first-child) {
+    margin-top: 32px;
   }
 }
 body .content .main-card .logos-group {
@@ -609,6 +687,9 @@ body select {
   font-weight: 600;
   color: #333333;
 }
+body .radio-grouping > label {
+  padding: 12px 24px;
+}
 body .custom-select {
   position: relative;
   display: inline-block;
@@ -641,6 +722,18 @@ body .custom-select::after {
 body label {
   font-weight: 600;
   font-family: "Public Sans";
+  line-height: 21.5px;
+}
+@media only screen and (min-width: 768px) {
+  body label {
+    line-height: 27px;
+  }
+}
+body label.radio-wrapper,
+body select,
+body input[type=text] {
+  line-height: normal;
+  height: 45px;
 }
 body fieldset {
   display: flex;
@@ -656,6 +749,7 @@ body .primary-button {
   font-size: 20px;
   width: 100%;
   padding: 10px;
+  height: 48px;
   border-radius: 5px;
   text-align: center;
 }

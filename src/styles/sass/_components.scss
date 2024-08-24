@@ -1,11 +1,68 @@
 @import "mixins";
 
 .radio-wrapper {
-  cursor: pointer;
-}
+    display: flex;
+    align-items: center;
+    // padding: 10px;
+    // border: 2px solid transparent;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+  }
+  
+  .radio-wrapper:has(input[type="radio"]:checked) {
+    border: solid 1px $inputBorderFocusColor;
+  }
+  
+  .radio-wrapper input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .radio-wrapper span {
+    position: relative;
+    padding-left: 30px;
+  }
+  
+  .radio-wrapper span::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border: 1px solid #333333;
+    border-radius: 50%;
+    background-color: transparent;
+  }
+  
+  .radio-wrapper input[type="radio"]:checked + span::before {
+    background-color: $lineColor;
+    border-color: $lineColor;
+  }
+  
+  .radio-wrapper span::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%) scale(0);
+    width: 6px;
+    height: 6px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+  }
+  
+  .radio-wrapper input[type="radio"]:checked + span::after {
+    transform: translateY(-50%) scale(1);
+  }
+
 
 // confirmation page styles
-
 body {
   .go-back {
     z-index: 30;
