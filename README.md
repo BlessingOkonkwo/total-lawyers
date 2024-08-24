@@ -35,7 +35,7 @@ To set up the project locally:
    ```
 2. Navigate to the project directory:
    ```bash
-   cd multi-step-form-project
+   cd total-lawyers
    ```
 3. Open the `index.html` file in your browser to view the form.
 
