@@ -19,14 +19,15 @@ body {
     flex-direction: column;
     align-items: center;
     position: relative;
-    justify-content: center;
-    padding: 32px 16px;
+    justify-content: top;
+    padding: 0 16px 32px 16px;
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: 0;
 
     @media only screen and (min-width: 768px) {
-      padding: 9.25rem 17.188rem;
+      //   padding: 9.25rem 17.188rem;
+      padding: 0 0 2.5rem 0;
     }
 
     /* blue background*/
@@ -43,7 +44,13 @@ body {
 
     .logo {
       z-index: 10;
-      margin-bottom: 32px;
+      margin-top: 30px;
+      margin-bottom: 20px;
+
+      @media only screen and (min-width: 768px) {
+        margin-top: 65px;
+        margin-bottom: 40px;
+      }
     }
 
     /* Keep the card above the blended background */
@@ -55,21 +62,49 @@ body {
       width: 100%;
       border-radius: 5px;
       padding: 24px 16px;
+      @include space-y(32px);
 
       @media only screen and (min-width: 768px) {
         flex-direction: row;
         width: 61.81vw;
         padding: 0;
+        @include space-y(0);
+      }
+
+      .top-logos-container,
+      .bottom-logos-container {
+        @include space-y(8px);
+
+        > p {
+          color: $textColor2;
+        }
+      }
+
+      .top-logos-container {
+        display: none;
+
+        @media only screen and (min-width: 768px) {
+          display: block;
+        }
+      }
+
+      .bottom-logos-container {
+        // display: block;
+
+        @media only screen and (min-width: 768px) {
+          display: none;
+        }
       }
 
       .info-card {
         background-color: $bgMainColor;
         width: 100%;
         padding: 0;
-        border-radius: 5px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
 
         @media only screen and (min-width: 768px) {
-          padding: 40px 24px 80px 24px;
+          padding: 40px 24px 2.5rem 24px;
           background-color: $bgVariantColor;
           width: 42.82%;
           @include space-y(40px);
@@ -90,10 +125,11 @@ body {
         background-color: $bgMainColor;
         width: 100%;
         padding: 0;
-        border-radius: 5px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
 
         @media only screen and (min-width: 768px) {
-          padding: 40px 40px 152px 40px;
+          padding: 40px 40px 7.5rem 40px;
           width: 57.18%;
         }
 
@@ -101,8 +137,44 @@ body {
           width: 100%;
           @include space-y(40px);
 
-          .form-fieldsets {
+          .form-step {
             @include space-y(32px);
+            // display: none;
+            visibility: hidden;
+            margin-bottom: 0;
+            height: 0;
+            opacity: 0;
+            transform: translateY(10%);
+            transition: opacity 0.6s cubic-bezier(0.39, 0.575, 0.565, 1),
+              transform 0.6s cubic-bezier(0.39, 0.575, 0.565, 1);
+          }
+
+          // @keyframes fadeIn {
+          //   0% {
+          //     opacity: 0;
+          //     transform: translateY(10%);
+          //   }
+          //   100% {
+          //     opacity: 1;
+          //     transform: translateY(0%);
+          //   }
+          // }
+
+          .form-step.active {
+            // display: block;
+            visibility: visible;
+            height: auto;
+            opacity: 1;
+            transform: translateY(0%);
+            margin-bottom: 40px;
+          }
+
+          .form-bottom {
+            @include space-y(24px);
+
+            @media only screen and (min-width: 768px) {
+              @include space-y(32px);
+            }
           }
         }
       }
@@ -124,11 +196,26 @@ body {
     flex-shrink: 0;
     flex-basis: auto;
     width: 100%;
+
+    #lg-footer-img {
+      display: none;
+      @media only screen and (min-width: 768px) {
+        display: block;
+      }
+    }
+
+    #sm-footer-img {
+      @media only screen and (min-width: 768px) {
+        display: none;
+      }
+    }
   }
 
   input[type="text"],
   textarea,
-  .radio-grouping > div {
+  .radio-grouping > div,
+  .radio-grouping > label,
+  select {
     border: solid $inputBoderWidth $inputBorderColor;
     border-radius: $borderRadius;
     padding: 12px 16px;
@@ -136,6 +223,37 @@ body {
     font-family: "Public Sans";
     font-weight: 600;
     color: $textColor;
+  }
+
+  .custom-select {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+
+  .custom-select select {
+    width: 100%;
+    background: transparent; /* Remove default background */
+    appearance: none; /* Remove default arrow */
+    cursor: pointer;
+  }
+
+  .custom-select::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    width: 10px;
+    height: 6px;
+    background-image: url("/public/images/caret-down.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-50%);
+    pointer-events: none;
+
+    @media only screen and (min-width: 768px) {
+      background-image: url("/public/images/caret-down-lg.png");
+    }
   }
 
   label {
@@ -158,6 +276,12 @@ body {
     padding: 10px;
     border-radius: 5px;
     text-align: center;
+
+    &:disabled {
+      background-color: grey;
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
   }
 
   .grouping {
@@ -176,6 +300,7 @@ body {
     color: $secondaryTextColor;
     font-size: 12px;
     line-height: 14.1px;
+    margin-bottom: 40px;
   }
 
   .hidden {
@@ -192,5 +317,11 @@ body {
     color: $linkColor;
     text-decoration: underline;
     cursor: pointer;
+  }
+
+  .numbered-label {
+    display: flex;
+    align-items: start;
+    gap: 5px;
   }
 }

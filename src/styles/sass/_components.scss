@@ -1,0 +1,46 @@
+@import "mixins";
+
+.radio-wrapper {
+  cursor: pointer;
+}
+
+// confirmation page styles
+
+body {
+  .go-back {
+    z-index: 30;
+    width: fit-content !important;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+  }
+
+  .confirmation-card {
+    flex-direction: column;
+    z-index: 10;
+    background-color: $bgMainColor;
+    width: 100%;
+    border-radius: 5px;
+    padding: 24px 16px;
+    @include space-y(20px);
+
+    @media only screen and (min-width: 768px) {
+      flex-direction: row;
+      width: 61.81vw;
+    }
+
+    .confirmation-details {
+      @include space-y(8px);
+
+      .key {
+        font-weight: bold;
+        color: $textColor;
+        margin-bottom: 5px;
+      }
+      .value {
+        color: $secondaryTextColor;
+        margin-bottom: 15px;
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/styles/css/main.css" />
+    <script defer src="/src/js/main.js"></script>
+    <script defer src="/src/js/confirmation.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Confirmation Page</title>
+  </head>
+  <body>
+    <!-- Content -->
+    <main class="content">
+      <div class="background-layer"></div>
+
+      <!-- Back Button -->
+      <button type="button" class="go-back" onclick="goBack()">
+        <span>
+          <img
+            src="/public/images/arrow-left.svg"
+            alt=""
+            width="25"
+            height="25"
+          />
+        </span>
+      </button>
+
+      <!-- logo -->
+      <div class="logo">
+        <img
+          src="/public/images/total-lawyers-logo.png"
+          alt="Total Lawyers Logo"
+        />
+      </div>
+      <div class="confirmation-card">
+        <h1>Consultation Booked Successfully!</h1>
+        <p>
+          Thank you for booking a consultation. Here are the details you
+          provided:
+        </p>
+        <div class="confirmation-details">
+          <!-- The submitted form values will be displayed here -->
+        </div>
+
+        <button type="button" class="primary-button" onclick="goBack()">
+          Go Back To Form
+        </button>
+      </div>
+    </main>
+  </body>
+</html>
